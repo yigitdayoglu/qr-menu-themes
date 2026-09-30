@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Test Restoran — Menü</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/elegant.css">
+<link rel="stylesheet" href="css/animations.css">
+<script>try{var t=localStorage.getItem('qrm-theme');document.documentElement.dataset.theme=t==='dark'?'dark':'light';}catch(e){document.documentElement.dataset.theme='light';}</script>
+</head>
+<body>
+  <div class="app" id="app"></div>
+  <div class="plate" id="plate" hidden>
+    <div class="plate__drawer" id="plateDrawer" hidden>
+      <div class="plate__head">
+        <h2>Tabağım</h2>
+        <button class="plate__clear" id="btnClear" type="button">Temizle</button>
+      </div>
+      <p class="plate__note">Kalori ve tutar toplamı — sipariş oluşturmaz.</p>
+      <div class="plate__list" id="cartList"></div>
+    </div>
+    <button class="plate__bar" id="plateBar" type="button" aria-expanded="false" aria-controls="plateDrawer">
+      <span class="plate__info">
+        <strong id="cbCount">0 ürün</strong>
+        <span id="cbTotals">0 kcal</span>
+      </span>
+      <span class="plate__toggle">Tabağım <span class="plate__chevron" aria-hidden="true">⌄</span></span>
+    </button>
+  </div>
+
+  <div class="asheet" id="asheet" hidden>
+    <div class="asheet__scrim" data-asheet-close></div>
+    <div class="asheet__panel" role="dialog" aria-modal="true" aria-labelledby="asTitle">
+      <button class="asheet__close" data-asheet-close type="button" aria-label="Kapat">&times;</button>
+      <h2 class="asheet__title" id="asTitle">Alerjen Bilgisi</h2>
+      <p class="asheet__item" id="asItem"></p>
+      <div class="asheet__tags" id="asTags"></div>
+      <p class="asheet__warn" id="asWarn"></p>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

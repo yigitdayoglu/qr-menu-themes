@@ -1,0 +1,11 @@
+.hero{background:var(--band);color:var(--on-band);padding:12px 16px 18px;border-bottom:2px solid var(--gold);text-align:center}
+.hero__actions{display:flex;justify-content:flex-end;gap:8px;margin-bottom:4px}
+.hero__row{display:flex;flex-direction:column;align-items:center;gap:2px}
+
+.hero__name{margin:0;max-width:20ch;font-family:var(--display);font-size:clamp(1.5rem,6.4vw,2.05rem);font-weight:800;letter-spacing:-.025em;line-height:1.08;text-align:center;text-wrap:balance;overflow-wrap:normal;word-break:keep-all}
+.hero__sub{margin:0;font-size:.82rem;color:var(--gold-bright);font-weight:700}
+.hero__btn{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);color:var(--gold-bright);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .16s var(--ease),transform .12s var(--ease)}
+.hero__btn:hover{background:rgba(255,255,255,.16)}
+.hero__btn:active{transform:scale(.94)}
+.hero__btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.hero__btn svg{width:20px;height:20px}

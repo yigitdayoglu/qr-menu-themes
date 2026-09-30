@@ -1,0 +1,7 @@
+.btn{border:0;border-radius:12px;padding:13px 16px;font-size:.95rem;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .12s var(--ease),background .16s,border-color .16s,color .16s}
+.btn:active{transform:scale(.97)}
+.btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.btn--primary{background:var(--navy);color:#fff;flex:1}
+.btn--primary.is-added{background:var(--gold);color:var(--navy-deep)}
+.btn--allergen{background:var(--warn-soft);color:var(--warn);border:1.5px solid transparent}
+.btn--allergen:hover{border-color:var(--warn)}

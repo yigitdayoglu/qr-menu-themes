@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Test Restoran — Menü</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/cover.css">
+<link rel="stylesheet" href="css/cards.css">
+<link rel="stylesheet" href="css/badges.css">
+<link rel="stylesheet" href="css/buttons.css">
+<link rel="stylesheet" href="css/modals.css">
+<link rel="stylesheet" href="css/cart.css">
+<link rel="stylesheet" href="css/search.css">
+<link rel="stylesheet" href="css/animations.css">
+<script>try{var t=localStorage.getItem('qrm-theme');document.documentElement.dataset.theme=t==='dark'?'dark':'light';}catch(e){document.documentElement.dataset.theme='light';}</script>
+</head>
+<body>
+  <div class="app" id="app"></div>
+  <div class="cartbar" id="cartbar" hidden>
+    <div class="cartbar__info">
+      <strong id="cbCount">0 ürün</strong>
+      <span id="cbTotals">0 kcal</span>
+    </div>
+    <button class="cartbar__btn" id="cbOpen">Tabağımı Gör</button>
+  </div>
+  <div class="modal" id="itemModal" hidden aria-modal="true" role="dialog" aria-labelledby="mName">
+    <div class="modal__scrim" data-close></div>
+    <div class="modal__card" role="document">
+      <button class="modal__close" data-close aria-label="Kapat">&times;</button>
+      <div class="modal__media" id="mMedia" aria-hidden="true"></div>
+      <div class="modal__body">
+        <p class="modal__cat" id="mCat"></p>
+        <h2 class="modal__name" id="mName"></h2>
+        <div class="modal__tags" id="mTags"></div>
+        <div class="modal__metarow">
+          <span class="modal__price" id="mPrice"></span>
+        </div>
+        <p class="modal__desc" id="mDesc"></p>
+        <div class="modal__actions">
+          <button class="btn btn--primary" id="btnAdd">Tabağıma Ekle</button>
+          <button class="btn btn--allergen" id="btnAllergens">Alerjenler</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modal--top" id="allergenModal" hidden aria-modal="true" role="dialog" aria-labelledby="alTitle">
+    <div class="modal__scrim" data-close></div>
+    <div class="modal__card" role="document">
+      <button class="modal__close" data-close aria-label="Kapat">&times;</button>
+      <div class="amodal">
+        <h2 class="amodal__title" id="alTitle">Alerjen Bilgisi</h2>
+        <p class="amodal__item" id="alItem"></p>
+        <div class="amodal__tags" id="alTags"></div>
+        <p class="amodal__warn" id="alWarn"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="cartModal" hidden aria-modal="true" role="dialog" aria-labelledby="cartTitle">
+    <div class="modal__scrim" data-close></div>
+    <div class="modal__card" role="document">
+      <button class="modal__close" data-close aria-label="Kapat">&times;</button>
+      <div class="cart">
+        <h2 class="cart__title" id="cartTitle">Tabağım</h2>
+        <p class="cart__note">Tabağındaki ürünlerin kalori ve fiyat toplamı — sipariş oluşturmaz.</p>
+        <div class="cart__list" id="cartList"></div>
+        <div class="cart__foot">
+          <div class="cart__totals">
+            <div class="kcal" id="cartKcal">0 kcal</div>
+            <div class="money" id="cartMoney">0 ₺</div>
+          </div>
+          <button class="cart__clear" id="btnClear">Temizle</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="searchModal" hidden aria-modal="true" role="dialog" aria-labelledby="searchTitle">
+    <div class="modal__scrim" data-close></div>
+    <div class="modal__card" role="document">
+      <button class="modal__close" data-close aria-label="Kapat">&times;</button>
+      <div class="search">
+        <h2 class="search__title" id="searchTitle">Ürün Ara</h2>
+        <label class="search__box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <input type="search" id="searchInput" placeholder="Ürün adı veya açıklama…" autocomplete="off" aria-label="Ürün ara">
+        </label>
+        <div class="search__results" id="searchResults"></div>
+        <p class="search__empty" id="searchEmpty" hidden>Sonuç bulunamadı.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

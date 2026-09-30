@@ -1,0 +1,13 @@
+.featured[hidden]{display:none}
+.featured__title{font-family:var(--display);font-size:1.15rem;font-weight:800;letter-spacing:-.02em;margin:16px 2px 12px;display:flex;align-items:center;gap:8px}
+.featured__title::before{content:"★";color:var(--gold);font-size:1rem}
+.featured__track{display:flex;gap:12px;overflow-x:auto;scrollbar-width:none;padding:2px 2px 8px;scroll-snap-type:x mandatory}
+.featured__track::-webkit-scrollbar{display:none}
+.fcard{flex:0 0 158px;scroll-snap-align:start;display:flex;flex-direction:column;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;cursor:pointer;box-shadow:var(--shadow-sm);transition:transform .16s var(--ease),box-shadow .16s var(--ease),border-color .16s var(--ease)}
+.fcard:active{transform:scale(.985)}
+.fcard:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.fcard__tile{position:relative;aspect-ratio:3/2;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:1.75rem;font-weight:800;color:var(--gold-bright)}
+.fcard__body{padding:9px 11px 11px}
+.fcard__body strong{display:block;font-size:.85rem;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fcard__body span{font-size:.9rem;font-weight:800;color:var(--price)}
+@media (hover:hover){ .fcard:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--gold)} }
